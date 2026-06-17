@@ -149,16 +149,16 @@ export function About() {
         <div className="space-y-6">
           <div className="glass-card p-8">
             <h2 className="text-xl font-bold text-cyan-400 mb-4">Who We Are</h2>
-            <p className="text-gray-300 leading-relaxed">**Agrodut** is an advanced educational platform that prepares students for various national and international Olympiads and competitions. It provides well-structured question sets, online classes, and competition-focused training. The platform is guided by experienced teachers, including national and international medal winners, ensuring high-quality mentorship. Agrodut aims to develop students’ skills, boost their competitive ability, and provide a trusted learning environment for academic excellence.</p>
+            <p className="text-gray-300 leading-relaxed">Agrodut is an advanced educational platform that prepares students for various national and international Olympiads and competitions. It provides well-structured question sets, online classes, and competition-focused training. The platform is guided by experienced teachers, including national and international medal winners, ensuring high-quality mentorship. Agrodut aims to develop students’ skills, boost their competitive ability, and provide a trusted learning environment for academic excellence.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card p-6">
-              <h3 className="text-lg font-bold text-purple-400 mb-3">🎯 Our Mission</h3>
+              <h3 className="text-lg font-bold text-purple-400 mb-3">🎯 Our Mission in JZS</h3>
               <p className="text-gray-400 leading-relaxed">To ignite the spark of scientific curiosity in every student and build a community of future scientists and innovators from Jamalpur.</p>
             </div>
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold text-cyan-400 mb-3">🌟 Our Vision</h3>
-              <p className="text-gray-400 leading-relaxed">A Bangladesh where every young student can explore, experiment, and discover the wonders of science — regardless of background.</p>
+              <p className="text-gray-400 leading-relaxed">To become a leading global educational platform that empowers students with knowledge, skills, and confidence to excel in national and international Olympiads and competitions. Agrodut envisions creating a future where every learner, regardless of background, has access to high-quality competitive education and mentorship from world-class educators, enabling them to unlock their full potential and contribute meaningfully to society.</p>
             </div>
           </div>
           {settings.facebook_url && (
