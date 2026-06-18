@@ -154,7 +154,7 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold text-purple-400 mb-3">🎯 Our Mission in JZS</h3>
-              <p className="text-gray-400 leading-relaxed">To ignite the spark of scientific curiosity in every student and build a community of future scientists and innovators from Jamalpur.</p>
+              <p className="text-gray-400 leading-relaxed">To ignite the spark of scientific curiosity in every student and nurture a dynamic, inclusive, and forward-thinking community of future scientists, innovators, researchers, and problem-solvers from Jamalpur who are equipped with deep knowledge, critical thinking ability, and creativity. This community will actively contribute to scientific advancement, technological innovation, and sustainable development, not only within Jamalpur and Bangladesh but also on the global stage, shaping a brighter and more progressive future for humanity.</p>
             </div>
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold text-cyan-400 mb-3">🌟 Our Vision</h3>

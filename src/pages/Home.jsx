@@ -179,7 +179,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-gray-300 mb-8">
                 <li className="flex items-center gap-2"><span className="text-purple-400">✓</span> Individual participation</li>
                 <li className="flex items-center gap-2"><span className="text-purple-400">✓</span> Multiple subjects</li>
-                <li className="flex items-center gap-2"><span className="text-purple-400">✓</span> Subject-wise medals</li>
+                <li className="flex items-center gap-2"><span className="text-purple-400">✓</span> Subject-wise prizes</li>
               </ul>
               <Link to="/register?type=olympiad" className="neon-btn-purple inline-block">
                 Register for Olympiad
