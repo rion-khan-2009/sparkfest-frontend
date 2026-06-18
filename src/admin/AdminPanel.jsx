@@ -66,7 +66,7 @@ async function generateCardsPDF(cards, type, siteUrl) {
         doc.setFont("helvetica","normal"); doc.setFontSize(6.5); doc.setTextColor(80,80,80);
         doc.text("Register at:",x+cardW/2,y+32,{align:"center"});
         doc.setFont("helvetica","bold"); doc.setFontSize(7); doc.setTextColor(0,80,180);
-        doc.text(siteUrl||"spark-fest.netlify.app",x+cardW/2,y+37,{align:"center"});
+        doc.text(siteUrl||"https://spark-fest.netlify.app",x+cardW/2,y+37,{align:"center"});
         doc.setFont("helvetica","italic"); doc.setFontSize(5.5); doc.setTextColor(180,50,50);
         doc.text("* One-time use only. Non-transferable.",x+cardW/2,y+cardH-4,{align:"center"});
         idx++;
@@ -469,7 +469,7 @@ function CardGenerator() {
   const [fetching,setFetching]=useState(true);
   const [msg,setMsg]=useState("");
   const [batches,setBatches]=useState([]);
-  const [siteUrl,setSiteUrl]=useState("spark-fest.netlify.app");
+  const [siteUrl,setSiteUrl]=useState("https://spark-fest.netlify.app");
 
   // Delete mode state
   const [deleteMode,setDeleteMode]=useState(false);
@@ -545,7 +545,7 @@ function CardGenerator() {
           </div>
           <div>
             <label className="block text-sm text-gray-400 mb-1">Website URL (on card)</label>
-            <input type="text" className="input-dark" placeholder="spark-fest.netlify.app" value={siteUrl} onChange={e=>setSiteUrl(e.target.value)}/>
+            <input type="text" className="input-dark" placeholder="https://spark-fest.netlify.app" value={siteUrl} onChange={e=>setSiteUrl(e.target.value)}/>
           </div>
         </div>
         <button onClick={generate} disabled={loading}
