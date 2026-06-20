@@ -777,8 +777,21 @@ function OlympiadRegistration({ onBack }) {
                   <input className="input-dark font-mono" placeholder="16-character card code"
                     value={cardCodes[i] || ""}
                     onChange={e => {
-                      const next = [...cardCodes]; next[i] = e.target.value; setCardCodes(next);
-                      const errs = [...cardErrors]; errs[i] = ""; setCardErrors(errs);
+                      const newVal = e.target.value;
+                      const next = [...cardCodes]; next[i] = newVal; setCardCodes(next);
+
+                      // ✅ Real-time duplicate check হিসেবে দেখাও
+                      const errs = [...cardErrors];
+                      const trimmedNew = newVal.trim().toUpperCase();
+                      if (trimmedNew) {
+                        const dupIndex = next.findIndex((c, idx) => idx !== i && c.trim().toUpperCase() === trimmedNew);
+                        errs[i] = dupIndex !== -1
+                          ? `This card code is already used in Card ${dupIndex + 1}. Use a different card.`
+                          : "";
+                      } else {
+                        errs[i] = "";
+                      }
+                      setCardErrors(errs);
                     }} />
                   {cardErrors[i] && <p className="text-red-400 text-xs mt-1">❌ {cardErrors[i]}</p>}
                 </div>
@@ -786,6 +799,23 @@ function OlympiadRegistration({ onBack }) {
             })}
             <button disabled={cardChecking || cardCodes.some(c => !c.trim())}
               onClick={async () => {
+                // ✅ প্রথমে duplicate check করো — same code একাধিক field এ থাকলে আটকাও
+                const trimmed = cardCodes.map(c => c.trim().toUpperCase());
+                const dupErrors = Array(segments.length).fill("");
+                let hasDuplicate = false;
+                trimmed.forEach((code, i) => {
+                  const firstIndex = trimmed.findIndex(c => c === code);
+                  if (firstIndex !== i) {
+                    dupErrors[i] = "This card code is already used in Card " + (firstIndex + 1) + ". Each segment needs a different card.";
+                    hasDuplicate = true;
+                  }
+                });
+                if (hasDuplicate) {
+                  setCardErrors(dupErrors);
+                  return;
+                }
+
+                // তারপর backend এ একে একে validate করো
                 setCardChecking(true);
                 const newErrors = Array(segments.length).fill("");
                 let allValid = true;
