@@ -59,12 +59,12 @@ function MobileInput({ value, onChange, required }) {
   );
 }
 
-async function validateCardCode(code) {
+async function validateCardCode(code, expectedType) {
   try {
     const res = await fetch(API_URL, {
       method:"POST", redirect:"follow",
       headers:{"Content-Type":"text/plain"},
-      body: JSON.stringify({ action:"validateCard", card_code: code.trim() })
+      body: JSON.stringify({ action:"validateCard", card_code: code.trim(), expected_type: expectedType })
     });
     return await res.json();
   } catch {
@@ -400,7 +400,7 @@ function QuizRegistration({ onBack }) {
             <button disabled={cardChecking || !cardCode.trim()}
               onClick={async () => {
                 setCardChecking(true); setCardError("");
-                const res = await validateCardCode(cardCode);
+                const res = await validateCardCode(cardCode, "quiz");
                 setCardChecking(false);
                 if (res.valid) setStep(3);
                 else setCardError(res.message || "Invalid or already used card code.");
@@ -820,7 +820,7 @@ function OlympiadRegistration({ onBack }) {
                 const newErrors = Array(segments.length).fill("");
                 let allValid = true;
                 for (let i = 0; i < segments.length; i++) {
-                  const res = await validateCardCode(cardCodes[i]);
+                  const res = await validateCardCode(cardCodes[i], "olympiad");
                   if (!res.valid) { newErrors[i] = res.message || "Invalid or used code."; allValid = false; }
                 }
                 setCardErrors(newErrors); setCardChecking(false);
