@@ -147,15 +147,8 @@ function NoticeContent({ content }) {
               className="w-full object-cover"
               style={{ aspectRatio:"16/9" }}
             />
-            {/* Play button overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-all">
-              <div className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background:"rgba(255,0,0,0.9)" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
+            {/* Hover overlay only — no play button */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all" />
             {/* YouTube label */}
             <div className="absolute bottom-0 left-0 right-0 px-3 py-2"
               style={{ background:"linear-gradient(transparent,rgba(0,0,0,0.8))" }}>
