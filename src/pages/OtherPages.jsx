@@ -302,28 +302,36 @@ export function About() {
         <div className="space-y-6">
           <div className="glass-card p-8">
             <h2 className="text-xl font-bold text-cyan-400 mb-4">Who We Are</h2>
-            <p className="text-gray-300 leading-relaxed">Agrodut is the official Science Club of Jamalpur Zilla School — a student-led organization dedicated to nurturing scientific curiosity, critical thinking, and innovation among young minds. We organize events, workshops, and competitions throughout the year.</p>
+            <p className="text-gray-300 leading-relaxed">Agrodut is an advanced educational platform that prepares students for various national and international Olympiads and competitions. It provides well-structured question sets, online classes, and competition-focused training. The platform is guided by experienced teachers, including national and international medal winners, ensuring high-quality mentorship. Agrodut aims to develop students’ skills, boost their competitive ability, and provide a trusted learning environment for academic excellence.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold text-purple-400 mb-3">🎯 Our Mission</h3>
-              <p className="text-gray-400 leading-relaxed">To ignite the spark of scientific curiosity in every student and build a community of future scientists and innovators from Jamalpur.</p>
+              <p className="text-gray-400 leading-relaxed">To empower students with top-tier academic resources, expert mentorship from medal-winning educators, and rigorous training modules. We strive to democratize competition preparation, build unwavering problem-solving confidence, and bridge the gap between classroom learning and global competitive excellence for every passionate learner.</p>
             </div>
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold text-cyan-400 mb-3">🌟 Our Vision</h3>
-              <p className="text-gray-400 leading-relaxed">A Bangladesh where every young student can explore, experiment, and discover the wonders of science — regardless of background.</p>
+              <p className="text-gray-400 leading-relaxed">To ignite the spark of scientific curiosity in every student and nurture a dynamic, inclusive, and forward-thinking community of future scientists, innovators, researchers, and problem-solvers from Jamalpur who are equipped with deep knowledge, critical thinking ability, and creativity. This community will actively contribute to scientific advancement, technological innovation, and sustainable development, not only within Jamalpur and Bangladesh but also on the global stage, shaping a brighter and more progressive future for humanity.</p>
             </div>
           </div>
-          {settings.facebook_url && (
-            <div className="glass-card p-8 text-center">
-              <h3 className="text-lg font-bold text-white mb-4">Connect With Us</h3>
-              <a href={settings.facebook_url} target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all text-white" style={{background:"#1877f2"}}>
+          
+          <div className="glass-card p-8 text-center space-y-4">
+            <h3 className="text-lg font-bold text-white mb-2">Connect With Us</h3>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {settings.facebook_url && (
+                <a href={settings.facebook_url} target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all text-white w-full sm:w-auto justify-center" style={{background:"#1877f2"}}>
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  Follow Agrodut on Facebook
+                </a>
+              )}
+              <a href="https://www.facebook.com/share/g/1EBnd4h1VP/" target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all text-white w-full sm:w-auto justify-center" style={{background:"#1877f2"}}>
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Follow Agrodut on Facebook
+                JZS Science Club
               </a>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
