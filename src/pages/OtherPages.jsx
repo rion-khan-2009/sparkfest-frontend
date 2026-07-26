@@ -185,6 +185,72 @@ export function Status() {
 // ══════════════════════════════════════════════════════════════
 // NOTICES
 // ══════════════════════════════════════════════════════════════
+// ─── YouTube ID extract ───────────────────────────────────────
+function getYouTubeId(url) {
+  const match = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+  );
+  return match ? match[1] : null;
+}
+
+// ─── Notice content — links clickable, YouTube thumbnail (no play button) ───
+function NoticeContent({ content }) {
+  if (!content) return null;
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts    = content.split(urlRegex);
+  const urls     = parts.filter(p => urlRegex.test(p));
+  // reset lastIndex after test()
+  urlRegex.lastIndex = 0;
+
+  return (
+    <div className="space-y-3">
+      {/* Text with inline clickable links */}
+      <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-wrap">
+        {parts.map((part, i) => {
+          if (!/(https?:\/\/[^\s]+)/.test(part)) return <span key={i}>{part}</span>;
+          return (
+            <a key={i} href={part} target="_blank" rel="noreferrer"
+              className="underline break-all transition-colors"
+              style={{color:"#06b6d4"}}>
+              {part}
+            </a>
+          );
+        })}
+      </p>
+
+      {/* YouTube thumbnails — no play button, click opens YouTube */}
+      {parts.filter(p => /(https?:\/\/[^\s]+)/.test(p)).map((url, i) => {
+        const ytId = getYouTubeId(url);
+        if (!ytId) return null;
+        return (
+          <a key={i} href={url} target="_blank" rel="noreferrer"
+            className="block rounded-xl overflow-hidden border border-white/10 hover:border-cyan-400/40 transition-all group relative"
+            style={{maxWidth:"400px"}}>
+            <img
+              src={`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`}
+              alt="YouTube video thumbnail"
+              className="w-full object-cover"
+              style={{aspectRatio:"16/9"}}
+            />
+            {/* Subtle hover overlay only — no play button */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all"/>
+            {/* YouTube label at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 px-3 py-2"
+              style={{background:"linear-gradient(transparent,rgba(0,0,0,0.75))"}}>
+              <p className="text-white text-xs font-medium flex items-center gap-1.5">
+                <svg width="14" height="10" viewBox="0 0 24 17" fill="red">
+                  <path d="M23.5 2.5s-.3-1.8-1.1-2.6c-1-.8-2.2-.8-2.7-.9C16.7 0 12 0 12 0S7.3 0 4.3.1c-.5 0-1.7.1-2.7.9C.8.8.5 2.5.5 2.5S.2 4.6.2 6.7v2c0 2.1.3 4.2.3 4.2s.3 1.8 1.1 2.6c1 .8 2.4.8 3 .9C6.5 16.5 12 16.5 12 16.5s4.7 0 7.7-.2c.5 0 1.7-.1 2.7-.9.8-.8 1.1-2.6 1.1-2.6s.3-2.1.3-4.2v-2C23.8 4.6 23.5 2.5 23.5 2.5zM9.7 11.5V5l6.6 3.3-6.6 3.2z"/>
+                </svg>
+                Watch on YouTube
+              </p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  );
+}
+
 export function Notices() {
   const { notices, loading } = useApi();
   return (
@@ -211,7 +277,7 @@ export function Notices() {
                   <h3 className="font-bold text-white text-lg">{n.title}</h3>
                   <span className="text-gray-500 text-xs whitespace-nowrap">{new Date(n.created_at).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})}</span>
                 </div>
-                <p className="text-gray-400 leading-relaxed whitespace-pre-wrap">{n.content}</p>
+                <NoticeContent content={n.content} />
               </div>
             ))}
           </div>
