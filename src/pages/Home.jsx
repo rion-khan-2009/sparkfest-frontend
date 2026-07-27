@@ -130,7 +130,7 @@ export default function Home() {
         {settings.banner_image_url && (
           <div className="absolute inset-0 z-0">
             <img src={settings.banner_image_url} alt="Banner"
-              className="w-full h-full object-cover opacity-30"/>
+              className="w-full h-full object-cover opacity-60"/>
             <div className="absolute inset-0" style={{background:"linear-gradient(to bottom,#0B0F1Aaa,#0B0F1A)"}}/>
           </div>
         )}
