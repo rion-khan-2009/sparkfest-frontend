@@ -748,20 +748,46 @@ function Registrations() {
                       </div>
                     </div>
 
-                    {/* Actions — not for astro (free event, auto confirmed) */}
-                    {!isAstro&&(
-                      <div className="flex gap-2 mt-3 pt-3 border-t border-white/5">
-                        {actionLoading[r.reg_id]?<div className="flex-1 py-2 text-center text-cyan-400 text-sm"><Spinner/></div>
-                          :payType==="bkash"?<>
-                            {r.payment_status!=="confirmed"&&<button onClick={()=>updateStatus(r.reg_id,"confirmed")} className="flex-1 py-2 rounded-lg text-xs font-bold border border-green-500/30 text-green-400 hover:bg-green-500/10 transition-all">✅ Confirm</button>}
-                            {r.payment_status!=="rejected"&&<button onClick={()=>updateStatus(r.reg_id,"rejected")} className="flex-1 py-2 rounded-lg text-xs font-bold border border-red-500/30 text-red-400 hover:bg-red-500/10 transition-all">❌ Decline</button>}
-                            {r.payment_status==="confirmed"&&<p className="flex-1 text-center text-green-400 text-xs py-2">✅ Confirmed</p>}
-                          </>:<>
-                            {r.payment_status==="confirmed"?<p className="flex-1 text-center text-green-400 text-xs py-2">✅ Auto-Confirmed (Card)</p>:null}
-                            <button onClick={()=>updateStatus(r.reg_id,"rejected")} className="flex-1 py-2 rounded-lg text-xs font-bold border border-red-500/30 text-red-400 hover:bg-red-500/10 transition-all">🚫 Cancel</button>
-                          </>}
-                      </div>
-                    )}
+                    {/* Actions */}
+                    <div className="flex gap-2 mt-3 pt-3 border-t border-white/5">
+                      {actionLoading[r.reg_id]
+                        ? <div className="flex-1 py-2 text-center text-cyan-400 text-sm"><Spinner/></div>
+                        : isAstro
+                          // Astro: approve/reject photo submission
+                          ? <>
+                              {r.payment_status!=="confirmed"&&(
+                                <button onClick={()=>updateStatus(r.reg_id,"confirmed")}
+                                  className="flex-1 py-2 rounded-lg text-xs font-bold border border-green-500/30 text-green-400 hover:bg-green-500/10 transition-all">
+                                  ✅ Approve Photo
+                                </button>
+                              )}
+                              {r.payment_status==="confirmed"&&(
+                                <p className="flex-1 text-center text-green-400 text-xs py-2">✅ Photo Approved</p>
+                              )}
+                              {r.payment_status!=="rejected"&&(
+                                <button onClick={()=>updateStatus(r.reg_id,"rejected")}
+                                  className="flex-1 py-2 rounded-lg text-xs font-bold border border-red-500/30 text-red-400 hover:bg-red-500/10 transition-all">
+                                  ❌ Reject
+                                </button>
+                              )}
+                              {r.payment_status==="rejected"&&(
+                                <p className="flex-1 text-center text-red-400 text-xs py-2">❌ Rejected</p>
+                              )}
+                            </>
+                          : payType==="bkash"
+                            // Bkash: confirm/decline payment
+                            ? <>
+                                {r.payment_status!=="confirmed"&&<button onClick={()=>updateStatus(r.reg_id,"confirmed")} className="flex-1 py-2 rounded-lg text-xs font-bold border border-green-500/30 text-green-400 hover:bg-green-500/10 transition-all">✅ Confirm</button>}
+                                {r.payment_status!=="rejected"&&<button onClick={()=>updateStatus(r.reg_id,"rejected")} className="flex-1 py-2 rounded-lg text-xs font-bold border border-red-500/30 text-red-400 hover:bg-red-500/10 transition-all">❌ Decline</button>}
+                                {r.payment_status==="confirmed"&&<p className="flex-1 text-center text-green-400 text-xs py-2">✅ Confirmed</p>}
+                              </>
+                            // Card: auto confirmed
+                            : <>
+                                {r.payment_status==="confirmed"?<p className="flex-1 text-center text-green-400 text-xs py-2">✅ Auto-Confirmed (Card)</p>:null}
+                                <button onClick={()=>updateStatus(r.reg_id,"rejected")} className="flex-1 py-2 rounded-lg text-xs font-bold border border-red-500/30 text-red-400 hover:bg-red-500/10 transition-all">🚫 Cancel</button>
+                              </>
+                      }
+                    </div>
                   </div>
                 );
               })}
