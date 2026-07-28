@@ -302,32 +302,45 @@ export function About() {
         <div className="space-y-6">
           <div className="glass-card p-8">
             <h2 className="text-xl font-bold text-cyan-400 mb-4">Who We Are</h2>
-            <p className="text-gray-300 leading-relaxed">Agrodut is an advanced educational platform that prepares students for various national and international Olympiads and competitions. It provides well-structured question sets, online classes, and competition-focused training. The platform is guided by experienced teachers, including national and international medal winners, ensuring high-quality mentorship. Agrodut aims to develop students’ skills, boost their competitive ability, and provide a trusted learning environment for academic excellence.</p>
+            <p className="text-gray-300 leading-relaxed">
+              Agrodut is an advanced educational platform that prepares students for various national and international Olympiads and competitions. It provides well-structured question sets, online classes, and competition-focused training. The platform is guided by experienced teachers, including national and international medal winners, ensuring high-quality mentorship. Agrodut aims to develop students’ skills, boost their competitive ability, and provide a trusted learning environment for academic excellence.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold text-purple-400 mb-3">🎯 Our Mission</h3>
-              <p className="text-gray-400 leading-relaxed">To empower students with top-tier academic resources, expert mentorship from medal-winning educators, and rigorous training modules. We strive to democratize competition preparation, build unwavering problem-solving confidence, and bridge the gap between classroom learning and global competitive excellence for every passionate learner.</p>
+              <p className="text-gray-400 leading-relaxed">
+                To empower young minds through rigorous training, systematic problem-solving strategies, and high-caliber academic resources. We are committed to breaking traditional learning barriers by connecting passionate students with experienced mentors and medalists, bridging the gap between classroom curricula and international competition standards, and inspiring a lifelong passion for discovery and innovation.
+              </p>
             </div>
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold text-cyan-400 mb-3">🌟 Our Vision</h3>
-              <p className="text-gray-400 leading-relaxed">To ignite the spark of scientific curiosity in every student and nurture a dynamic, inclusive, and forward-thinking community of future scientists, innovators, researchers, and problem-solvers from Jamalpur who are equipped with deep knowledge, critical thinking ability, and creativity. This community will actively contribute to scientific advancement, technological innovation, and sustainable development, not only within Jamalpur and Bangladesh but also on the global stage, shaping a brighter and more progressive future for humanity.</p>
+              <p className="text-gray-400 leading-relaxed">
+                To ignite the spark of scientific curiosity in every student and nurture a dynamic, inclusive, and forward-thinking community of future scientists, innovators, researchers, and problem-solvers from Jamalpur who are equipped with deep knowledge, critical thinking ability, and creativity. This community will actively contribute to scientific advancement, technological innovation, and sustainable development, not only within Jamalpur and Bangladesh but also on the global stage, shaping a brighter and more progressive future for humanity.
+              </p>
             </div>
           </div>
-          
-          <div className="glass-card p-8 text-center space-y-4">
-            <h3 className="text-lg font-bold text-white mb-2">Connect With Us</h3>
+
+          {/* Social Media Links */}
+          <div className="glass-card p-8 text-center">
+            <h3 className="text-lg font-bold text-white mb-6">Connect With Us</h3>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {settings.facebook_url && (
                 <a href={settings.facebook_url} target="_blank" rel="noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all text-white w-full sm:w-auto justify-center" style={{background:"#1877f2"}}>
-                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  Follow Agrodut on Facebook
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all text-white hover:opacity-90"
+                  style={{background:"#1877f2"}}>
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Agrodut Facebook Page
                 </a>
               )}
-              <a href="https://www.facebook.com/share/g/1EBnd4h1VP/" target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all text-white w-full sm:w-auto justify-center" style={{background:"#1877f2"}}>
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <a href="https://www.facebook.com/jzssc" target="_blank" rel="noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all text-white hover:opacity-90"
+                style={{background:"#1877f2"}}>
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
                 JZS Science Club
               </a>
             </div>
@@ -402,7 +415,12 @@ const SUBJECTS = [
   { id:"chemistry",          label:"Chemistry" },
   { id:"biology",            label:"Biology" },
   { id:"linguistic_science", label:"Linguistic Science" },
-  { id:"ict",                label:"ICT" },
+];
+const COMP_TYPES = [
+  { id:"quiz",           icon:"🧩", label:"Quiz",                 color:"#00f5ff" },
+  { id:"olympiad",       icon:"🔭", label:"Olympiad",             color:"#a855f7" },
+  { id:"science_project", icon:"🔬", label:"Science Project",     color:"#f59e0b" },
+  { id:"astro_photo",     icon:"🌌", label:"Astro Photography",   color:"#06b6d4" },
 ];
 
 export function Results() {
@@ -413,37 +431,43 @@ export function Results() {
   const [data,         setData]         = useState(null);
   const [loading,      setLoading]      = useState(false);
 
-  // Which tab is currently published?
-  const publishKey = compType === "quiz"
-    ? `result_quiz_${quizRound}`
-    : `result_olympiad_${olympSubject}`;
+  // Get publish key for current selection
+  function getPublishKey() {
+    if (compType === "quiz")            return `result_quiz_${quizRound}`;
+    if (compType === "olympiad")        return `result_olympiad_${olympSubject}`;
+    if (compType === "science_project") return "result_science_project";
+    if (compType === "astro_photo")     return "result_astro_photo";
+    return "";
+  }
+  const publishKey  = getPublishKey();
   const isPublished = settings[publishKey] === "published";
+  const ct          = COMP_TYPES.find(t => t.id === compType);
 
-  // Lists of what IS published (for indicators)
-  const pubRounds   = ROUNDS.filter(r   => settings[`result_quiz_${r.id}`]      === "published");
-  const pubSubjects = SUBJECTS.filter(s => settings[`result_olympiad_${s.id}`]  === "published");
+  // Published sub-tabs
+  const pubRounds   = ROUNDS.filter(r   => settings[`result_quiz_${r.id}`]     === "published");
+  const pubSubjects = SUBJECTS.filter(s => settings[`result_olympiad_${s.id}`] === "published");
 
-  // Auto-select first published tab when type changes
   useEffect(() => {
-    if (compType === "quiz" && pubRounds.length > 0) setQuizRound(pubRounds[0].id);
+    if (compType === "quiz"     && pubRounds.length   > 0) setQuizRound(pubRounds[0].id);
     if (compType === "olympiad" && pubSubjects.length > 0) setOlympSubject(pubSubjects[0].id);
     setData(null);
   }, [compType, settings]);
 
-  // Load result data whenever selection changes and it is published
   useEffect(() => {
     if (!isPublished) { setData(null); return; }
     async function load() {
       setLoading(true); setData(null);
       try {
-        const url = compType === "quiz"
-          ? `${API_URL}?action=getResults&type=quiz&round=${quizRound}`
-          : `${API_URL}?action=getResults&type=olympiad&subject=${olympSubject}`;
+        let url = `${API_URL}?action=getResults&type=${compType}`;
+        if (compType === "quiz")     url += `&round=${quizRound}`;
+        if (compType === "olympiad") url += `&subject=${olympSubject}`;
         const res  = await fetch(url);
         const json = await res.json();
         if (json.success) {
           let arr = Array.isArray(json.data) ? json.data : [];
-          arr = [...arr].sort((a,b)=>(b.total_marks||b.marks||0)-(a.total_marks||a.marks||0));
+          arr = [...arr]
+            .filter(r => (r.total_marks || r.marks || 0) > 0)
+            .sort((a,b) => (b.total_marks||b.marks||0) - (a.total_marks||a.marks||0));
           setData(arr);
         }
       } catch {}
@@ -454,6 +478,9 @@ export function Results() {
 
   const roundLabel   = ROUNDS.find(r   => r.id === quizRound)?.label    || "";
   const subjectLabel = SUBJECTS.find(s => s.id === olympSubject)?.label  || "";
+  const resultTitle  = compType === "quiz"     ? `Quiz — ${roundLabel}`
+                     : compType === "olympiad" ? `Olympiad — ${subjectLabel}`
+                     : ct?.label || "";
 
   return (
     <div className="min-h-screen pt-24 pb-16 px-4">
@@ -463,25 +490,32 @@ export function Results() {
           <p className="text-gray-400">Competition leaderboard and rankings</p>
         </div>
 
-        {/* Competition type tabs */}
-        <div className="flex rounded-xl overflow-hidden border border-white/10 mb-6 max-w-xs mx-auto">
-          {["quiz","olympiad"].map(t=>(
-            <button key={t} onClick={()=>setCompType(t)}
-              className="flex-1 py-3 font-semibold text-sm transition-all capitalize"
-              style={{background:compType===t?"rgba(0,245,255,0.12)":"transparent", color:compType===t?"#00f5ff":"#9ca3af"}}>
-              {t==="quiz"?"🧩 Quiz":"🔭 Olympiad"}
+        {/* ── 4 Competition type tabs ─────────────────────────── */}
+        <div className="flex flex-wrap gap-2 justify-center mb-6">
+          {COMP_TYPES.map(t => (
+            <button key={t.id} onClick={()=>setCompType(t.id)}
+              className="px-4 py-2.5 rounded-xl text-sm font-semibold border transition-all"
+              style={{
+                borderColor: compType===t.id ? t.color : "rgba(255,255,255,0.1)",
+                color:       compType===t.id ? t.color : "#9ca3af",
+                background:  compType===t.id ? t.color+"18" : "transparent",
+              }}>
+              {t.icon} {t.label}
+              {/* Published indicator for SP and AP */}
+              {(t.id==="science_project"||t.id==="astro_photo") && settings[`result_${t.id}`]==="published" && (
+                <span className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full bg-green-400 align-middle"/>
+              )}
             </button>
           ))}
         </div>
 
-        {/* Quiz round selector */}
+        {/* ── Quiz round selector ──────────────────────────────── */}
         {compType==="quiz" && (
           <div className="flex flex-wrap gap-2 justify-center mb-6">
-            {ROUNDS.map(r=>{
+            {ROUNDS.map(r => {
               const pub = settings[`result_quiz_${r.id}`]==="published";
               return (
-                <button key={r.id}
-                  onClick={()=>{ if(pub){setQuizRound(r.id);} }}
+                <button key={r.id} onClick={()=>{ if(pub) setQuizRound(r.id); }}
                   className="px-4 py-2 rounded-lg text-sm border transition-all"
                   style={{
                     borderColor: quizRound===r.id?"#00f5ff": pub?"rgba(255,255,255,0.15)":"rgba(255,255,255,0.05)",
@@ -490,23 +524,21 @@ export function Results() {
                     cursor:      pub?"pointer":"not-allowed",
                   }}>
                   {r.label}
-                  {pub
-                    ? <span className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full bg-green-400 align-middle"/>
-                    : <span className="ml-1.5 text-gray-600 text-xs">○</span>}
+                  {pub ? <span className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full bg-green-400 align-middle"/>
+                       : <span className="ml-1.5 text-gray-600 text-xs">○</span>}
                 </button>
               );
             })}
           </div>
         )}
 
-        {/* Olympiad subject selector */}
+        {/* ── Olympiad subject selector ────────────────────────── */}
         {compType==="olympiad" && (
           <div className="flex flex-wrap gap-2 justify-center mb-6">
-            {SUBJECTS.map(s=>{
+            {SUBJECTS.map(s => {
               const pub = settings[`result_olympiad_${s.id}`]==="published";
               return (
-                <button key={s.id}
-                  onClick={()=>{ if(pub){setOlympSubject(s.id);} }}
+                <button key={s.id} onClick={()=>{ if(pub) setOlympSubject(s.id); }}
                   className="px-4 py-2 rounded-lg text-sm border transition-all"
                   style={{
                     borderColor: olympSubject===s.id?"#a855f7": pub?"rgba(255,255,255,0.15)":"rgba(255,255,255,0.05)",
@@ -515,94 +547,110 @@ export function Results() {
                     cursor:      pub?"pointer":"not-allowed",
                   }}>
                   {s.label}
-                  {pub
-                    ? <span className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full bg-green-400 align-middle"/>
-                    : <span className="ml-1.5 text-gray-600 text-xs">○</span>}
+                  {pub ? <span className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full bg-green-400 align-middle"/>
+                       : <span className="ml-1.5 text-gray-600 text-xs">○</span>}
                 </button>
               );
             })}
           </div>
         )}
 
-        {/* Not yet published */}
+        {/* ── Not published ────────────────────────────────────── */}
         {!isPublished && (
           <div className="text-center py-16 text-gray-500">
             <div className="text-6xl mb-4">⏳</div>
             <p className="text-lg font-medium text-gray-400">Result not published yet</p>
             <p className="text-sm mt-2 text-gray-600">
-              {compType==="quiz"
-                ? pubRounds.length>0 ? `Available: ${pubRounds.map(r=>r.label).join(", ")}` : "No quiz results published yet."
-                : pubSubjects.length>0 ? `Available: ${pubSubjects.map(s=>s.label).join(", ")}` : "No olympiad results published yet."}
+              {compType==="quiz"     && (pubRounds.length>0   ? `Available: ${pubRounds.map(r=>r.label).join(", ")}` : "No quiz results published yet.")}
+              {compType==="olympiad" && (pubSubjects.length>0 ? `Available: ${pubSubjects.map(s=>s.label).join(", ")}` : "No olympiad results published yet.")}
+              {compType==="science_project" && "Science Project results not published yet."}
+              {compType==="astro_photo"     && "Astro Photography results not published yet."}
             </p>
           </div>
         )}
 
-        {/* Loading */}
+        {/* ── Loading ──────────────────────────────────────────── */}
         {isPublished && loading && (
-          <div className="text-center py-16 text-cyan-400">
-            <div className="w-8 h-8 rounded-full border-2 border-cyan-400 border-t-transparent animate-spin mx-auto mb-3"/>
+          <div className="text-center py-16" style={{color:ct?.color||"#00f5ff"}}>
+            <div className="w-8 h-8 rounded-full border-2 border-t-transparent animate-spin mx-auto mb-3"
+              style={{borderColor:ct?.color||"#00f5ff",borderTopColor:"transparent"}}/>
             <p>Loading results...</p>
           </div>
         )}
 
-        {/* No data */}
+        {/* ── No data ──────────────────────────────────────────── */}
         {isPublished && !loading && data && data.length===0 && (
-          <div className="text-center py-16 text-gray-500"><p>No marks entered for this round/subject yet.</p></div>
+          <div className="text-center py-16 text-gray-500"><p>No marks entered yet.</p></div>
         )}
 
-        {/* Result table */}
-        {isPublished && !loading && data && data.length>0 && (
-          <div className="glass-card overflow-hidden">
-            <div className="px-5 py-4 border-b border-white/10">
-              <p className="font-bold text-white text-base">
-                {compType==="quiz" ? `Quiz — ${roundLabel}` : `Olympiad — ${subjectLabel}`} Results
-                <span className="text-gray-500 text-sm ml-2">({data.length} entries)</span>
-              </p>
-            </div>
-            {/* Top 3 podium */}
-            <div className="p-4 grid grid-cols-3 gap-3 border-b border-white/10">
-              {[1,0,2].map(pos=>{
-                const r = data[pos];
-                if(!r) return <div key={pos}/>;
-                const colors = ["#00f5ff","#f59e0b","#a855f7"];
-                const labels = ["2nd","1st","3rd"];
-                const sizes  = ["text-2xl","text-3xl","text-2xl"];
-                const order  = [1,0,2]; // visual column → data index
-                return (
-                  <div key={pos} className={`flex flex-col items-center text-center ${pos===0?"order-2":"pos===2?order-3:order-1"}`}>
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mb-2 border-2"
-                      style={{borderColor:colors[pos],background:colors[pos]+"18",color:colors[pos]}}>
-                      {labels[pos]}
-                    </div>
-                    <p className="text-white font-semibold text-sm leading-tight">{(r.team_name||r.name||"").substring(0,16)}</p>
-                    <p className="font-bold mt-1" style={{color:colors[pos]}}>{r.total_marks||r.marks||0} pts</p>
-                  </div>
-                );
-              })}
-            </div>
-            {/* Full table */}
-            <table className="w-full text-sm">
-              <thead style={{background:"rgba(255,255,255,0.03)"}}>
-                <tr>
-                  <th className="px-4 py-3 text-left text-gray-400 font-medium w-14">#</th>
-                  <th className="px-4 py-3 text-left text-gray-400 font-medium">Name / Team</th>
-                  <th className="px-4 py-3 text-right text-gray-400 font-medium">Marks</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((r,i)=>(
-                  <tr key={i} className="border-t border-white/5 hover:bg-white/2">
-                    <td className="px-4 py-3 font-bold" style={{color:i===0?"#f59e0b":i===1?"#9ca3af":i===2?"#b45309":"#6b7280"}}>
-                      {i+1}
-                    </td>
-                    <td className="px-4 py-3 text-white font-medium">{r.team_name||r.name}</td>
-                    <td className="px-4 py-3 text-right text-cyan-400 font-bold">{r.total_marks||r.marks||0}</td>
+        {/* ── Result leaderboard ───────────────────────────────── */}
+        {isPublished && !loading && data && data.length>0 && (()=>{
+          // Podium: visual order [2nd, 1st, 3rd]
+          const podiumOrder = [1, 0, 2];
+          const podiumColor = { 0:"#f59e0b", 1:"#9ca3af", 2:"#b45309" };
+          const podiumLabel = { 0:"1st", 1:"2nd", 2:"3rd" };
+
+          return (
+            <div className="glass-card overflow-hidden">
+              <div className="px-5 py-4 border-b border-white/10 flex items-center gap-2">
+                <span>{ct?.icon}</span>
+                <p className="font-bold text-white text-base">{resultTitle} Results
+                  <span className="text-gray-500 text-sm ml-2 font-normal">({data.length} participants)</span>
+                </p>
+              </div>
+
+              {/* Podium */}
+              {data.length >= 1 && (
+                <div className="py-6 px-4 border-b border-white/10 flex items-end justify-center gap-4">
+                  {podiumOrder.map(dataIdx => {
+                    const r = data[dataIdx];
+                    if (!r) return <div key={dataIdx} className="w-24"/>;
+                    const color   = podiumColor[dataIdx];
+                    const isFirst = dataIdx === 0;
+                    return (
+                      <div key={dataIdx}
+                        className={`flex flex-col items-center text-center w-28 ${isFirst?"order-2":dataIdx===1?"order-1":"order-3"}`}>
+                        <p className="text-white font-semibold text-sm mb-1 leading-tight line-clamp-2">
+                          {(r.team_name||r.name||"").substring(0,18)}
+                        </p>
+                        <p className="font-bold text-sm mb-2" style={{color}}>{r.total_marks||r.marks||0} pts</p>
+                        <div className="w-full rounded-t-lg flex items-center justify-center font-bold text-white text-sm"
+                          style={{background:color, minHeight:isFirst?"60px":"44px", padding:"8px 0"}}>
+                          {podiumLabel[dataIdx]}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Full ranking table */}
+              <table className="w-full text-sm">
+                <thead style={{background:"rgba(255,255,255,0.03)"}}>
+                  <tr>
+                    <th className="px-4 py-3 text-left text-gray-400 font-medium w-16">Rank</th>
+                    <th className="px-4 py-3 text-left text-gray-400 font-medium">Name / Team</th>
+                    <th className="px-4 py-3 text-right text-gray-400 font-medium">Marks</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+                </thead>
+                <tbody>
+                  {data.map((r,i) => (
+                    <tr key={i} className="border-t border-white/5 hover:bg-white/2">
+                      <td className="px-4 py-3 font-bold text-base"
+                        style={{color:i===0?"#f59e0b":i===1?"#9ca3af":i===2?"#b45309":"#6b7280"}}>
+                        {i===0?"🥇":i===1?"🥈":i===2?"🥉":`#${i+1}`}
+                      </td>
+                      <td className="px-4 py-3 text-white font-medium">{r.team_name||r.name}</td>
+                      <td className="px-4 py-3 text-right font-bold" style={{color:ct?.color||"#00f5ff"}}>
+                        {r.total_marks||r.marks||0}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        })()}
       </div>
     </div>
   );
