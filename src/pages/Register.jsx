@@ -643,7 +643,7 @@ function OlympiadRegistration({ onBack }) {
     async function handleSubmit(){
       setSubmitting(true);setError("");
       try{
-        const d=await post({action:"registerOlympiad",name,class:className,institution,
+        const d=await post({action:"registerOlympiad",participant_name:name,student_class:className,institution,
           subjects:segments.join(","),contact_mobile:mobile,email,payment_method:payMethod,
           bkash_number:bkashSender,bkash_txn_id:bkashTxn,card_codes:cardCodes.join(",")});
         if(d.success){setRegId(d.reg_id);setStep(6);}else setError(d.message);
@@ -936,7 +936,7 @@ function AstroPhotoRegistration({ onBack }) {
           if(!photoLink.includes("drive.google.com")) return setError("Please use a valid Google Drive link.");
           setSubmitting(true);setError("");
           try{
-            const d=await post({action:"registerAstroPhoto",name,institution,class:className,
+            const d=await post({action:"registerAstroPhoto",participant_name:name,institution,student_class:className,
               contact_mobile:mobile,email,photo_name:photoName,photo_link:photoLink});
             if(d.success){setRegId(d.reg_id);setStep(3);}else setError(d.message);
           }catch{setError("Network error.");}finally{setSubmitting(false);}
